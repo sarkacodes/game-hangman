@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Padauk&display=swap" rel="stylesheet">
+        <title>Hangman</title>
+        <script src="wordlist.js" defer></script>
+        <script src="app.js" defer></script>
+    </head>
+    <body>
+        <div class="game-container">
+            <div class="game-container__hangman">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="25 90 65 70">
+                    <g fill="none" stroke="#2D3047" stroke-width="1.3">
+                      <path d="M28.222234 157.1625h43.488649" class="hangman__path hangman__path10"/>
+                      <path stroke-linecap="square" d="M49.966559 95.340949v61.292381" class="hangman__path hangman__path9"/>
+                      <path d="M49.966559 95.340949H80.22604" class="hangman__path hangman__path8"/>
+                      <path stroke-linecap="square" d="M80.22604 95.340949v9.789531" class="hangman__path hangman__path7"/>
+                      <circle cx="80.226044" cy="111.19234" r="5.6136012" class="hangman__path hangman__path6"/>
+                      <path stroke-linecap="square" d="M80.226044 117.5972v13.45288" class="hangman__path hangman__path5"/>
+                      <path stroke-linecap="square" d="M85.883971 118.21159l-5.12876 6.11205" class="hangman__path hangman__path4"/>
+                      <path stroke-linecap="square" d="M74.568117 118.21159l5.12876 6.11205" class="hangman__path hangman__path3"/>
+                      <path stroke-linecap="square" d="M80.360711 131.71392l4.859426 8.4529" class="hangman__path hangman__path2"/>
+                      <path stroke-linecap="square" d="M80.091363 131.71393l-4.859398 8.4502" class="hangman__path hangman__path1"/>
+                    </g>
+                  </svg>
+            </div>
+            <div class="game-container__guessed-word"></div>
+            <div class="game-container__letters">
+                <div>A</div>
+                <div>B</div>
+                <div>C</div>
+                <div>D</div>
+                <div>E</div>
+                <div>F</div>
+                <div>G</div>
+                <div>H</div>
+                <div>I</div>
+                <div>J</div>
+                <div>K</div>
+                <div>L</div>
+                <div>M</div>
+                <div>N</div>
+                <div>O</div>
+                <div>P</div>
+                <div>Q</div>
+                <div>R</div>
+                <div>S</div>
+                <div>T</div>
+                <div>U</div>
+                <div>V</div>
+                <div>W</div>
+                <div>X</div>
+                <div>Y</div>
+                <div>Z</div>
+            </div>
+        </div>
+        <div class="popup">
+            <p class="popup__message"></p>
+            <button class="popup__button">Start a new game</button>
+        </div>
+    </body>
+</html>

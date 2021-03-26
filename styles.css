@@ -1,0 +1,157 @@
+:root {
+    --primary-color: #ac3931;
+    --secondary-color: #2d3047;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    background: #e6e0e0;
+}
+
+.game-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1%;
+    border: 5px dashed var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.game-container__hangman {
+    display: flex;
+    justify-content: center;
+}
+
+[class^="hangman__path"] {
+    visibility: hidden;
+}
+
+.game-container__hangman > svg {
+    max-height: 300px;
+    max-width: 300px;
+}
+
+.game-container__guessed-word {
+    display: flex;
+    justify-content: center;
+    height: 3.5rem;
+    font-family: "Kalam", sans-serif;
+    font-size: 3rem;
+}
+
+[class^="game-container__guessed-word__letter"] {
+    width: 30px;
+    border-bottom: 2px solid var(--primary-color);
+    text-align: center;
+}
+
+[class^="game-container__guessed-word__letter"]:not(:last-child) {
+    margin-right: 10px;
+}
+
+.game-container__letters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 650px;
+    margin-top: 1rem;
+    font-family: "Kalam", sans-serif;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.game-container__letters > div {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background-color: var(--primary-color);
+    color: white;
+    border: 2px #e6e0e0 solid;
+    cursor: default;
+}
+
+.game-container__letters > .disabled {
+    background-color: #c8807c;
+}
+
+.game-container__letters > .disabled::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: block;
+    height: 6px;
+    margin: auto;
+    background: var(--secondary-color);
+    transform: rotate(45deg);
+    content: "";
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 250px;
+    margin: auto;
+    padding: 1rem;
+    border: 3px solid var(--primary-color);
+    background-color: #fff;
+    font-family: "Padauk", sans-serif;
+    text-align: center;
+    font-size: calc(1rem + 0.3vw);
+    transform: scale(0.1) translate(-50%, -50%);
+    transition: all 0.2s;
+    transform-origin: left;
+    visibility: hidden;
+}
+
+.popup.show {
+    transform: scale(1) translate(-50%, -50%);
+}
+
+.popup__button {
+    margin-top: 1em;
+    padding: 10px 20px 10px 20px;
+    background: var(--secondary-color);
+    border: 0;
+    font-family: inherit;
+    color: #fff;
+    font-size: inherit;
+    line-height: 1;
+}
+
+.popup__button:hover {
+    background: #5a5d71;
+}
+
+@media screen and (max-width: 25rem) {
+    .game-container__guessed-word {
+        font-size: 1.5rem;
+        height: 35px;
+    }
+
+    [class^="game-container__guessed-word__letter"] {
+        width: 20px;
+    }
+
+    [class^="game-container__guessed-word__letter"]:not(:last-child) {
+        margin-right: 5px;
+    }
+
+    .game-container__letters {
+        font-size: 2rem;
+    }
+
+    .game-container__letters > div {
+        width: 50px;
+        height: 50px;
+    }
+}
